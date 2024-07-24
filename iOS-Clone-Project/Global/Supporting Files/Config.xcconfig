@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  iOS-Clone-Project
+//
+//  Created by 민 on 7/21/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = e1ef1ff15bdd3d275708f7d5e3df93ad
