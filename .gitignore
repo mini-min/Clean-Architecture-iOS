@@ -134,6 +134,7 @@ iOSInjectionProject/
 
 ### Env
 *.xcconfig
+*.config
 .env
 
 ### Firebase
