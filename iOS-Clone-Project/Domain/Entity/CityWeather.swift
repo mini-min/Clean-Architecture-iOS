@@ -1,5 +1,5 @@
 //
-//  WeatherListModel.swift
+//  CityWeather.swift
 //  iOS-Clone-Project
 //
 //  Created by 민 on 7/21/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeatherListModel {
+struct CityWeather {
     let location: String
     let time: Int
     let weather: String

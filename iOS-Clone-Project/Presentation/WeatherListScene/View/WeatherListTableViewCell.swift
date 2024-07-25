@@ -78,7 +78,7 @@ final class WeatherListTableViewCell: UITableViewCell {
 // MARK: - Extensions
 
 extension WeatherListTableViewCell {
-    func bindData(data: WeatherListModel, row: Int) {
+    func bindData(data: CityWeather, row: Int) {
         self.locationLabel.text = data.location
         self.timeLabel.text = makeTimeZoneToTime(timeZone: data.time)
         self.weatherLabel.text = data.weather

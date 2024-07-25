@@ -13,9 +13,9 @@
 		3987F9DB2C4CE92C00D0F61F /* WeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9DA2C4CE92C00D0F61F /* WeatherListView.swift */; };
 		3987F9DD2C4CEA7900D0F61F /* WeatherListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9DC2C4CEA7900D0F61F /* WeatherListTableViewCell.swift */; };
 		3987F9E12C4CEDB200D0F61F /* WeatherListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9E02C4CEDB200D0F61F /* WeatherListUseCase.swift */; };
-		3987F9E32C4CEDBF00D0F61F /* WeatherListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9E22C4CEDBF00D0F61F /* WeatherListModel.swift */; };
+		3987F9E32C4CEDBF00D0F61F /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9E22C4CEDBF00D0F61F /* CityWeather.swift */; };
 		3987F9E62C4D080900D0F61F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9E52C4D080900D0F61F /* Observable.swift */; };
-		3987F9E82C4D1C9300D0F61F /* WeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9E72C4D1C9300D0F61F /* WeatherEntity.swift */; };
+		3987F9E82C4D1C9300D0F61F /* CityWeatherResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9E72C4D1C9300D0F61F /* CityWeatherResponseDTO.swift */; };
 		3987F9F32C4D2D3F00D0F61F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9F22C4D2D3F00D0F61F /* Config.swift */; };
 		3987F9F62C4D2DB200D0F61F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3987F9F52C4D2DB200D0F61F /* Config.xcconfig */; };
 		3987F9FB2C4D314A00D0F61F /* DefaultWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3987F9FA2C4D314A00D0F61F /* DefaultWeatherRepository.swift */; };
@@ -45,9 +45,9 @@
 		3987F9DA2C4CE92C00D0F61F /* WeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListView.swift; sourceTree = "<group>"; };
 		3987F9DC2C4CEA7900D0F61F /* WeatherListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewCell.swift; sourceTree = "<group>"; };
 		3987F9E02C4CEDB200D0F61F /* WeatherListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListUseCase.swift; sourceTree = "<group>"; };
-		3987F9E22C4CEDBF00D0F61F /* WeatherListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListModel.swift; sourceTree = "<group>"; };
+		3987F9E22C4CEDBF00D0F61F /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
 		3987F9E52C4D080900D0F61F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		3987F9E72C4D1C9300D0F61F /* WeatherEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntity.swift; sourceTree = "<group>"; };
+		3987F9E72C4D1C9300D0F61F /* CityWeatherResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherResponseDTO.swift; sourceTree = "<group>"; };
 		3987F9F22C4D2D3F00D0F61F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3987F9F52C4D2DB200D0F61F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3987F9FA2C4D314A00D0F61F /* DefaultWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherRepository.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			children = (
 				3987F9D62C4CE71600D0F61F /* Network */,
 				3987F9D72C4CE71B00D0F61F /* Repository */,
-				3987F9D52C4CE70D00D0F61F /* Entity */,
+				3987F9D52C4CE70D00D0F61F /* DTO */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -98,7 +98,7 @@
 			children = (
 				3987FA152C513A9E00D0F61F /* Interface */,
 				3987F9D42C4CE6D400D0F61F /* UseCase */,
-				3987F9D32C4CE6CF00D0F61F /* Model */,
+				3987F9D32C4CE6CF00D0F61F /* Entity */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -128,12 +128,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		3987F9D32C4CE6CF00D0F61F /* Model */ = {
+		3987F9D32C4CE6CF00D0F61F /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				3987F9E22C4CEDBF00D0F61F /* WeatherListModel.swift */,
+				3987F9E22C4CEDBF00D0F61F /* CityWeather.swift */,
 			);
-			path = Model;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		3987F9D42C4CE6D400D0F61F /* UseCase */ = {
@@ -144,12 +144,12 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		3987F9D52C4CE70D00D0F61F /* Entity */ = {
+		3987F9D52C4CE70D00D0F61F /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				3987F9E72C4D1C9300D0F61F /* WeatherEntity.swift */,
+				3987F9E72C4D1C9300D0F61F /* CityWeatherResponseDTO.swift */,
 			);
-			path = Entity;
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		3987F9D62C4CE71600D0F61F /* Network */ = {
@@ -373,7 +373,7 @@
 				3987FA0F2C4E2F5D00D0F61F /* ViewControllerFactory.swift in Sources */,
 				3987F9CC2C4CE54700D0F61F /* NSObject+.swift in Sources */,
 				3987FA032C4E25BE00D0F61F /* MoyaLoggerPlugin.swift in Sources */,
-				3987F9E32C4CEDBF00D0F61F /* WeatherListModel.swift in Sources */,
+				3987F9E32C4CEDBF00D0F61F /* CityWeather.swift in Sources */,
 				3987F9D92C4CE78600D0F61F /* WeatherListViewModel.swift in Sources */,
 				3987F9CA2C4CE53800D0F61F /* UIView+.swift in Sources */,
 				3987F9F32C4D2D3F00D0F61F /* Config.swift in Sources */,
@@ -384,7 +384,7 @@
 				3987F9FB2C4D314A00D0F61F /* DefaultWeatherRepository.swift in Sources */,
 				3987FA012C4D37A600D0F61F /* GenericResponse.swift in Sources */,
 				39B6E1182C44AC2B0087C3C7 /* AppDelegate.swift in Sources */,
-				3987F9E82C4D1C9300D0F61F /* WeatherEntity.swift in Sources */,
+				3987F9E82C4D1C9300D0F61F /* CityWeatherResponseDTO.swift in Sources */,
 				39B6E11A2C44AC2B0087C3C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

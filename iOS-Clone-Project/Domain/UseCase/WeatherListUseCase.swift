@@ -9,7 +9,7 @@ import Foundation
 
 protocol WeatherListUseCase {
     func execute(location: String, 
-                 completion: @escaping (Result<WeatherListModel, Error>) -> Void)
+                 completion: @escaping (Result<CityWeather, Error>) -> Void)
 }
 
 final class DefaultWeatherUseCase: WeatherListUseCase {
@@ -20,7 +20,7 @@ final class DefaultWeatherUseCase: WeatherListUseCase {
         self.repository = repository
     }
     
-    func execute(location: String, completion: @escaping (Result<WeatherListModel, Error>) -> Void) {
+    func execute(location: String, completion: @escaping (Result<CityWeather, Error>) -> Void) {
         repository.fetchWeather(location: location, completion: completion)
     }
 }

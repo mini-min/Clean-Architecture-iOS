@@ -19,11 +19,11 @@ final class DefaultWeatherRepository {
 extension DefaultWeatherRepository: WeatherRepository {
     
     func fetchWeather(location: String,
-                      completion: @escaping (Result<WeatherListModel, Error>) -> Void) {
+                      completion: @escaping (Result<CityWeather, Error>) -> Void) {
         weatherService.getWeatherLocation(location: location) { result in
             switch result {
             case .success(let entity):
-                let model = WeatherListModel(location: entity.name,
+                let model = CityWeather(location: entity.name,
                                              time: entity.timezone,
                                              weather: entity.weather.first?.main ?? "",
                                              temp: Int(entity.main.temp),

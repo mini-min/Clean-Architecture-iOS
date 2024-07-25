@@ -1,5 +1,5 @@
 //
-//  WeatherEntity.swift
+//  CityWeatherResponseDTO.swift
 //  iOS-Clone-Project
 //
 //  Created by 민 on 7/21/24.
@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - LocationWeather
 
-struct WeatherEntity: Codable {
+struct CityWeatherResponseDTO: Codable {
     let coord: Coord
     let weather: [Weather]
     let base: String

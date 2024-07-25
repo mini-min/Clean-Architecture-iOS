@@ -10,7 +10,7 @@ import Moya
 
 protocol WeatherServiceProtocol {
     func getWeatherLocation(location: String,
-                            completion: @escaping (Result<WeatherEntity, Error>) -> Void)
+                            completion: @escaping (Result<CityWeatherResponseDTO, Error>) -> Void)
 }
 
 final class WeatherService: WeatherServiceProtocol {
@@ -21,13 +21,13 @@ final class WeatherService: WeatherServiceProtocol {
     private init() {}
     
     func getWeatherLocation(location: String,
-                            completion: @escaping (Result<WeatherEntity, Error>) -> Void) {
+                            completion: @escaping (Result<CityWeatherResponseDTO, Error>) -> Void) {
         provider.request(.getWeatherLocation(location: location)) { result in
             switch result {
             case .success(let response):
                 do {
                     let decoder = JSONDecoder()
-                    let networkResult = try decoder.decode(WeatherEntity.self, from: response.data)
+                    let networkResult = try decoder.decode(CityWeatherResponseDTO.self, from: response.data)
                     completion(.success(networkResult))
                 } catch {
                     completion(.failure(error))

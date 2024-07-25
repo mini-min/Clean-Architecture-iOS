@@ -12,7 +12,7 @@ protocol WeatherListViewModelInput {
 }
 
 protocol WeatherListViewModelOutput {
-    var weathers: Observable<[WeatherListModel]> { get }
+    var weathers: Observable<[CityWeather]> { get }
     var errors: Observable<String> { get }
 }
 
@@ -24,7 +24,7 @@ final class DefaultWeatherListViewModel: WeatherListViewModel {
 
     // MARK: - OUTPUT
     
-    var weathers: Observable<[WeatherListModel]> = Observable([])
+    var weathers: Observable<[CityWeather]> = Observable([])
     var errors: Observable<String> = Observable("")
         
     init(fetchWeatherUsecase: WeatherListUseCase) {
@@ -33,7 +33,7 @@ final class DefaultWeatherListViewModel: WeatherListViewModel {
     
     private func load(for cities: [String]) {
         let group = DispatchGroup()
-        var weatherList = [WeatherListModel]()
+        var weatherList = [CityWeather]()
         var errorList = [Error]()
         
         for city in cities {
