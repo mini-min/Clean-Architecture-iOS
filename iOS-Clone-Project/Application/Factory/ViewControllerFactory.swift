@@ -9,6 +9,7 @@ import UIKit
 
 protocol ViewControllerFactoryProtocol {
     func makeWeatherListVC() -> WeatherListViewController
+    func makeDetailWeatherVC() -> DetailWeatherViewController
 }
 
 final class ViewControllerFactory: ViewControllerFactoryProtocol {
@@ -21,6 +22,11 @@ final class ViewControllerFactory: ViewControllerFactoryProtocol {
         let usecase = DefaultWeatherUseCase(repository: repository)
         let viewModel = DefaultWeatherListViewModel(fetchWeatherUsecase: usecase)
         let vc = WeatherListViewController(viewModel: viewModel)
+        return vc
+    }
+    
+    func makeDetailWeatherVC() -> DetailWeatherViewController {
+        let vc = DetailWeatherViewController()
         return vc
     }
 }

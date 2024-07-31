@@ -15,9 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(windowScene: windowScene)
-
-        let rootViewController = ViewControllerFactory.shared.makeWeatherListVC()
-        let navigationController = UINavigationController(rootViewController: rootViewController)
+        
+        let navigationController = UINavigationController()
+        let router = Router(navigationController: navigationController)
+        let coordinator = AppCoordinator(navigationController: navigationController, router: router)
+        coordinator.start()
         
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

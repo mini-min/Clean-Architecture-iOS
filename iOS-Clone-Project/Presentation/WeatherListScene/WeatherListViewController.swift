@@ -13,6 +13,7 @@ final class WeatherListViewController: UIViewController {
         
     // MARK: - UI Properties
     
+    var coordinator: AppCoordinator?
     private let viewModel: WeatherListViewModel
     
     private let searchController = UISearchController()
@@ -107,7 +108,11 @@ private extension WeatherListViewController {
 
 // MARK: - TableView Delegate
 
-extension WeatherListViewController: UITableViewDelegate {}
+extension WeatherListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.showDetailWeatherViewController()
+    }
+}
 
 // MARK: - TableView DataSource
 
@@ -127,4 +132,3 @@ extension WeatherListViewController: UITableViewDataSource {
         return cell
     }
 }
-
