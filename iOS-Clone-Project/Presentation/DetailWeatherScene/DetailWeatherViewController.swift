@@ -7,12 +7,45 @@
 
 import UIKit
 
-class DetailWeatherViewController: UIViewController {
+import SnapKit
 
+final class DetailWeatherViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    // MARK: - UI Properties
+    
+    private let detailWeatherView = DetailWeatherView()
+    
+    // MARK: - Life Cycle
+    
+    override func loadView() {
+        self.view = detailWeatherView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        setupDelegate()
     }
     
 }
+
+// MARK: - Networks
+
+extension DetailWeatherViewController {
+    func fetchMain() {
+        
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension DetailWeatherViewController {
+    
+    func setupDelegate() {
+        
+    }
+    
+}
+
